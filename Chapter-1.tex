@@ -1,0 +1,36 @@
+\documentclass[a4paper,english,10pt]{article}
+\input{header}
+\usepackage{etex,enumitem,hyperref,tikz,pgfplots}
+%opening
+
+\title{Solutions to Durrett's Probability: Theory and Examples \\(Edition 4.1)}
+%\author{Deadline}
+\date{}
+\begin{document}
+\maketitle
+\section*{Chapter 1}
+\begin{enumerate}
+\item[1.1.2 ]
+\proof
+To show $(\Omega, \mathcal{F}, \mathcal{P})$ is a probability space, we need to show $\mathcal{F} = \lbrace{A: A \text{ is countable or } A^c \text{ is countable}\rbrace}$ is a sigma algebra and $\mathcal{P}$ is a probability measure.\\\\
+To show $\mathcal{F}$ is a sigma algebra, observe that:
+\begin{enumerate}
+\item
+$\Omega \in \mathcal{F}$, since $\emptyset$ is countable by definition.
+\item
+if $A\in \mathcal{F}$ then $A$ must be either countable, in which case $(A^c)^c = A$ is countable and therefore $A^c$ belongs to $\mathcal{F}$, or $A^c$ is countable and so $A^c$ is also in $\mathcal{F}$.
+\item
+if $A_n \in \mathcal{F}, ~~\forall n \in \mathcal{N}$, then $A \triangleq \cup_{n=1}^\infty A_n$ is either countable, in which case it belongs to $\mathcal{F}$, or uncountable. If $A$ is uncountable then there exists an $m\in \mathcal{N}$ such that $A_m$ is uncountable and $A_m^c$ is countable. Since,  $A^c = (\cap_{n=1,n\neq m}^\infty A_n^c) \cap A_m^c$ and intersection of any set with a countable set is countable, $A^c$ is countable and thus $A$ belongs to $\mathcal{F}$.
+\end{enumerate}
+Thus $\mathcal{F}$ is a sigma algebra.\\\\
+To show $\mathcal{P}$ is a probability algebra, observe that:
+\begin{enumerate}
+\item
+Since $\Omega$ is uncountable $P(\Omega) = 1$.
+\item
+if $A_i \in \mathcal{F}$ are disjoint sets, then it is easy to see that either all the sets are countable or exactly one set is uncountable (because, if there are two disjoint sets $A_n$ and $A_m$ in $\mathcal{F}$ which are uncountable, then since $A_m \subseteq A_n^c$ and $A_n^c$ is countable, $A_m$ should be countable leading to contradiction). Thus, $P(\cup_{i=1}^\infty A_i) = \sum_{i=0}^{\infty} P(A_i) = 0$ if all $A_i$'s are countable and is equal to 1 if one of them is uncountable.
+\end{enumerate}
+Thus $\mathcal{P}$ is a Probability measure. 
+\qed
+\end{enumerate}
+\end{document}
