@@ -11,7 +11,7 @@
 \section*{Chapter 1}
 \begin{enumerate}
 \item[1.1.2 ]
-\proof
+\begin{proof}
 To show $(\Omega, \mathcal{F}, \mathcal{P})$ is a probability space, we need to show $\mathcal{F} = \lbrace{A: A \text{ is countable or } A^c \text{ is countable}\rbrace}$ is a sigma algebra and $\mathcal{P}$ is a probability measure.\\\\
 To show $\mathcal{F}$ is a sigma algebra, observe that:
 \begin{enumerate}
@@ -31,6 +31,27 @@ Since $\Omega$ is uncountable $P(\Omega) = 1$.
 if $A_i \in \mathcal{F}$ are disjoint sets, then it is easy to see that either all the sets are countable or exactly one set is uncountable (because, if there are two disjoint sets $A_n$ and $A_m$ in $\mathcal{F}$ which are uncountable, then since $A_m \subseteq A_n^c$ and $A_n^c$ is countable, $A_m$ should be countable leading to contradiction). Thus, $P(\cup_{i=1}^\infty A_i) = \sum_{i=0}^{\infty} P(A_i) = 0$ if all $A_i$'s are countable and is equal to 1 if one of them is uncountable.
 \end{enumerate}
 Thus $\mathcal{P}$ is a Probability measure. 
-\qed
+\end{proof}
+\item[1.1.3 ]
+\begin{proof}
+We shall show $\sigma(\mathcal{S}_d) = \mathcal{R}^d$ in multiple steps. 
+\begin{enumerate}
+\item
+observe that,  $$(a_,b_1)\times(a_2,b_2)...\times(a_d,b_d) = \cup_{n\geq1}(a_,b_1-1/n]\times(a_2,b_2-1/n]...\times(a_d,b_d-1/n],$$ which implies that open rectangles $(a_,b_1)\times(a_2,b_2)...\times(a_d,b_d) \in \sigma(\mathcal{S}_d).$
+\item \begin{claim}
+Every open set in $\R^d$ is a countable union of open rectangles
+\end{claim}
+\begin{proof}
+Associate with every internal point $x$ in the open set, an open rectangle with rational end points such that the open rectangle is a proper subset of the open set. This is possible as the rational points are dense in $\R$. Thus the claim is true as there are only countable such open rectangles and their union is equal to the open set.  
+\end{proof}
+\item Now, since every open set is a countable union of open rectangles, implying $\mathcal{R}^d \subseteq \sigma(\mathcal{S}_d)$.
+\item
+Observe that, $$(a_,b_1]\times(a_2,b_2]...\times(a_d,b_d] = \cap_{n\geq1}(a_,b_1+1/n)\times(a_2,b_2+1/n)...\times(a_d,b_d+1/n).$$
+Since any open rectangle is also an open set and hence in $\mathcal{R}^d$, the above observation shows that a set of the form $(a_,b_1]\times(a_2,b_2]...\times(a_d,b_d] \in \mathcal{R}^d$, which together proves   
+$\sigma(\mathcal{S}_d) \subseteq \mathcal{R}^d$
+
+\end{enumerate}
+\end{proof}
+
 \end{enumerate}
 \end{document}
